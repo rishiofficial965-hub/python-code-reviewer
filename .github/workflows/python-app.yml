@@ -19,4 +19,7 @@ jobs:
             - name: Install Dependencies
               run: pip install -r requirements.txt
             - name: run Review Script
+              env:
+                EMAIL_SERVICE: ${{secrets.EMAIL_SERVICE}}
+                GEMINI_API_KEY: ${{secrets.GEMINI_API_KEY}}
               run: python ./scripts/review.py
